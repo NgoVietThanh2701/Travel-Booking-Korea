@@ -1,0 +1,215 @@
+/**
+* style css
+* copyright @2024 NGOVIETTHANH
+*/
+
+/* CUSTOMER PROPERTY */
+
+:root {
+   /* COLOR */
+   /* text for nav-active */
+   --primary-col: #E97911;
+   --text-nav-col: #0F0F0F;
+   --border-nav-col: #FFE8A7;
+   --primary-bg-col: #FFCB00;
+   --title-contact-col: #2E1515;
+   /* title for page and for for text */
+   --title-col: #111111;
+   /* color for title-table-content and for text page */
+   --text-col: #353535;
+   --title-table-col: #c36;
+   --color-icon: #D55A17;
+
+
+   /* typogaphy */
+   --ff-roboto: "Roboto", sans-serif;
+   --ff-noto-san: "Noto Sans KR", sans-serif;
+
+   --fs-1: calc(20px + 3.5vw);
+   --fs-2: calc(18px + 1.6vw);
+   --fs-3: calc(16px + 0.45vw);
+   --fs-4: 15px;
+   --fs-5: 14px;
+   --fs-6: 13px;
+   --fs-7: 12px;
+   --fs-8: 11px;
+
+   --fw-500: 500;
+   --fw-600: 600;
+   --fw-700: 700;
+   --fw-800: 800;
+
+   /* transition */
+   --transition: 0.25s ease-in-out;
+
+   /* spacing */
+   --section-padding: 60px;
+
+   /* border radius */
+   --radius-15: 15px;
+   --radius-25: 25px;
+}
+
+/* RESET */
+
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+li {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+}
+
+a,
+img,
+span,
+input,
+label,
+button,
+ion-icon {
+   display: block;
+}
+
+input,
+button {
+   background: none;
+   border: none;
+   font: inherit;
+}
+
+button {
+   cursor: pointer;
+}
+
+input {
+   width: 100%;
+}
+
+ion-icon {
+   pointer-events: none;
+}
+
+html {
+   font-family: var(--ff-roboto);
+   scroll-behavior: smooth;
+}
+
+body {
+   background: var(--white);
+   height: 2000px;
+}
+
+/* REUSED STYLE */
+
+.container {
+   padding-inline: 10px
+}
+
+.btn {
+   font-size: var(--fs-5);
+   border-radius: 100px;
+   padding: var(--padding, 8px 18px);
+   border: var(--border-width, 2px) solid transparent;
+   text-transform: uppercase;
+   transition: var(--transition);
+}
+
+.h1,
+.h2 {
+   font-weight: var(--fw-800);
+   font-family: var(--ff-noto-san);
+   text-transform: uppercase;
+}
+
+
+/*
+*  indicator css
+*/
+
+/* HEADER */
+
+.header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding-top: 61px;
+   z-index: 4;
+}
+
+.header-top {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   transition: var(--transition);
+   padding-block: 6px;
+   z-index: 1;
+   border-bottom: 1px solid hsla(0, 0%, 50%, 0.1);
+}
+
+.header.active .header-top {
+   position: fixed;
+}
+
+.header-top .logo {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 45px;
+}
+
+.header-top .logo img {
+   max-width: 100%;
+   max-height: 100%;
+}
+
+/* header bottom */
+
+.header-bottom {
+   box-shadow: 0 2px 5px hsla(0, 0%, 0%, 0.07);
+}
+
+.header-bottom .container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 5px 15px;
+   position: relative;
+}
+
+.navbar-list {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   overflow: hidden;
+}
+
+.navbar-link {
+   color: var(--text-nav-col);
+   font-weight: var(--fw-500);
+   font-size: var(--fs-4);
+   text-transform: uppercase;
+   padding: 6px 9px;
+   white-space: nowrap;
+}
+
+.nav-open-btn {
+   font-size: 20px;
+   color: var(--text-col);
+   cursor: pointer;
+   display: block;
+}
+
+.nav-open-btn ion-icon {
+   --ionicon-stroke-width: 16px;
+}
