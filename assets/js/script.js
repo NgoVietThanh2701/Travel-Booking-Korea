@@ -1,26 +1,25 @@
 
-/*
-* Click navbar
-*/
-const navLinks = document.querySelectorAll("[data-nav-link]");
-
-if (navLinks.length > 0) {
-   navLinks[1].classList.add("active");
-}
-
-navLinks.forEach(link => {
-   link.addEventListener("click", function () {
-      navLinks.forEach(nav => nav.classList.remove("active"));
-      this.classList.add("active");
-   })
-});
-
-
-/* 
-*  Navbar
-*/
-
 document.addEventListener("DOMContentLoaded", function () {
+
+   /*
+   * Click navbar
+   */
+   const navLinks = document.querySelectorAll("[data-nav-link]");
+
+   if (navLinks.length > 0) {
+      navLinks[1].classList.add("active");
+   }
+
+   navLinks.forEach(link => {
+      link.addEventListener("click", function () {
+         navLinks.forEach(nav => nav.classList.remove("active"));
+         this.classList.add("active");
+      })
+   });
+
+   /* 
+   *  Navbar
+   */
 
    const navbarList = document.querySelector("[data-navbar-list]");
    const navOpenBtn = document.querySelector("[data-nav-open-btn]");
@@ -100,27 +99,67 @@ document.addEventListener("DOMContentLoaded", function () {
       lastScrollPosition = currentScrollPosition;
    });
 
+
+   /*
+   *  GO TO TOP
+   */
+
+   const goTop = document.querySelector("[data-go-top]");
+   const header = document.querySelector("[data-header]");
+
+   window.addEventListener("scroll", () => {
+      if (window.scrollY >= 140) {
+         goTop.classList.add("active");
+      } else {
+         goTop.classList.remove("active");
+      }
+   });
+
+   goTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      smoothScrollTo(0, 750);
+   });
+
+   /*
+   *  GO TABEL CONTENT
+   */
+
+   document.querySelectorAll("[data-title-content]").forEach(titleContent => {
+      const uniqueId = generateUniqueId(titleContent.textContent);
+      console.log(uniqueId);
+      titleContent.setAttribute('id', uniqueId);
+   });
+
+   document.querySelectorAll("[data-title-tabel]").forEach(titleTabel => {
+      titleTabel.addEventListener('click', function (e) {
+         e.preventDefault();
+         const targetId = generateUniqueId(this.textContent);
+         console.log(targetId);
+         const targetElement = document.getElementById(targetId);
+
+         if (targetElement) {
+            const target = targetElement.getBoundingClientRect().top + window.scrollY - (header.offsetHeight + 10);
+            smoothScrollTo(target.toFixed(4), 750);
+         }
+      })
+   })
 });
 
+function generateUniqueId(content) {
+   const baseId = content.trim().slice(0, 10).replace(/\s+/g, '-');
+   const hash = hashCode(content);
+   return `${baseId}||${hash}`;
+}
 
-/*
-*  GO TO TOP
-*/
-
-const goTop = document.querySelector("[data-go-top]");
-
-window.addEventListener("scroll", () => {
-   if (window.scrollY >= 140) {
-      goTop.classList.add("active");
-   } else {
-      goTop.classList.remove("active");
+function hashCode(str) {
+   let hash = 0;
+   for (let i = 0, len = str.length; i < len; i++) {
+      let chr = str.charCodeAt(i);
+      hash = (hash << 5) - hash + chr;
+      hash |= 0; // Convert to 32bit integer
    }
-});
-
-goTop.addEventListener('click', (e) => {
-   e.preventDefault();
-   smoothScrollTo(0, 750);
-});
+   return hash;
+}
 
 // Hàm cuộn mượt
 function smoothScrollTo(targetY, duration) {
