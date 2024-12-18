@@ -13,7 +13,7 @@
    --border-nav-col: #FFE8A7;
    --primary-bg-col: #FFCB00;
    --title-contact-col: #2E1515;
-   /* title for page and for for text */
+   /* title for page and for text */
    --title-col: #111111;
    /* color for title-table-content and for text page */
    --text-col: #353535;
@@ -195,11 +195,18 @@ body {
    padding-block: 1px 3px;
    padding-inline: 6px;
    white-space: nowrap;
+   border: 2.5px solid transparent;
+}
+
+.navbar-link:hover {
+   color: var(--primary-col);
+   border-color: var(--border-nav-col);
+   border-radius: 3px;
 }
 
 .navbar-link.active {
    color: var(--primary-col);
-   border: 2.5px solid var(--border-nav-col);
+   border-color: var(--border-nav-col);
    border-radius: 3px;
 }
 
@@ -309,11 +316,11 @@ body {
 * CONTENT PAGE
 */
 
-.content_page {
+.content-page {
    margin-block: 8px;
 }
 
-.content_page .title {
+.content-page .title {
    display: flex;
    justify-content: flex-start;
    align-items: center;
@@ -321,12 +328,12 @@ body {
    padding-block: 8px;
 }
 
-.content_page .title ion-icon {
+.content-page .title ion-icon {
    --ionicon-stroke-width: 60px;
    font-size: 15px;
 }
 
-.content_page .title>h2 {
+.content-page .title>h2 {
    color: var(--title-col);
    font-family: var(--ff-noto-san);
    font-size: 19px;
@@ -335,7 +342,7 @@ body {
    font-weight: var(--fw-600);
 }
 
-.content_page .text {
+.content-page .text {
    font-size: 17px;
    line-height: 1.7em;
    letter-spacing: -0.02em;
@@ -344,7 +351,7 @@ body {
    padding-block: 6px;
 }
 
-.content_page .list-address {
+.content-page .list-address {
    color: var(--text-col);
    padding-block: 4px;
    padding-left: 30px;
@@ -353,7 +360,7 @@ body {
    font-size: var(--fs-5)
 }
 
-.content_page .list-address>li {
+.content-page .list-address>li {
    list-style: disc;
 }
 
@@ -363,8 +370,8 @@ body {
 
 .go-top {
    position: fixed;
-   bottom: 26px;
-   right: 12px;
+   bottom: 62px;
+   right: 10px;
    display: grid;
    place-items: center;
    box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.5);
@@ -372,7 +379,8 @@ body {
    transform: translateY(15px);
    visibility: hidden;
    transition: var(--transition);
-   padding: 8px;
+   width: 46px;
+   height: 46px;
    cursor: pointer;
 }
 
@@ -391,6 +399,40 @@ body {
    opacity: 1;
 }
 
+/* contact */
+
+.talk {
+   position: fixed;
+   bottom: 4px;
+   right: 10px;
+   display: flex;
+   place-items: center;
+   padding-block: 8px;
+   cursor: pointer;
+   gap: 8px;
+}
+
+.talk>span {
+   font-size: 12px;
+   color: var(--title-col);
+   background-color: rgba(255, 236, 19, 1);
+   border-radius: 3px;
+   padding-block: 6px;
+   padding-inline: 16px;
+}
+
+.box-talk {
+   width: 46px;
+   height: 46px;
+   border-radius: 50%;
+   overflow: hidden;
+}
+
+.box-talk img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
 
 /*
 * FOOTER
@@ -510,7 +552,7 @@ body {
 
    /* CONTENT */
 
-   .content_page .container {
+   .content-page .container {
       padding-inline: 38px;
    }
 
@@ -536,6 +578,17 @@ body {
 
    .footer-map {
       height: 240px;
+   }
+
+   /**/
+   .go-top {
+      right: 24px;
+      bottom: 68px;
+   }
+
+   .talk {
+      right: 24px;
+      bottom: 8px;
    }
 }
 
@@ -602,32 +655,32 @@ body {
 
    /* CONTENT */
 
-   .content_page .container {
+   .content-page .container {
       max-width: var(--max-width);
       padding-inline: unset;
       margin-inline: auto;
    }
 
-   .content_page .title {
+   .content-page .title {
       gap: 10px;
    }
 
-   .content_page .title ion-icon {
+   .content-page .title ion-icon {
       --ionicon-stroke-width: 72px;
       font-size: 17px;
       padding: 2.5px;
    }
 
-   .content_page .title>h2 {
+   .content-page .title>h2 {
       font-size: 22px;
       letter-spacing: -0.01em;
    }
 
-   .content_page .text {
+   .content-page .text {
       padding-block: 8px;
    }
 
-   .content_page .list-address {
+   .content-page .list-address {
       padding-block: 6px;
       padding-left: 42px;
       line-height: 1.9em;
@@ -658,5 +711,16 @@ body {
       flex: 1;
       height: 210px;
       background-color: #f6f4f3;
+   }
+
+   /**/
+   .go-top {
+      right: 36px;
+      bottom: 72px;
+   }
+
+   .talk {
+      right: 36px;
+      bottom: 12px;
    }
 }

@@ -16,11 +16,13 @@
    <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet">
+   <!-- library convert ricktext json to html -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.3/purify.min.js"></script>
 </head>
 
 <body>
 
-   <header class="header" data-header>
+   <header class="header" id="header">
 
       <div class="header-top">
          <div class="container">
@@ -87,94 +89,13 @@
          <section class="table">
             <div class="container">
                <h1 class="table-subject">목차 살펴보기</h1>
-               <ol class="list">
-                  <li>
-                     <a data-title-tabel href="#" class="title">다낭밤문화가 더욱 특별해지는 이유</a>
-                     <ol class="sub-list">
-                        <li>
-                           <a data-title-tabel class="title" href="#">아름다운 밤문화와 다낭 가라오케</a>
-                        </li>
-                        <li>
-                           <a data-title-tabel class="title" href="#">매일같이 즐기고 싶어지는 다낭 마사지</a>
-                        </li>
-                        <li>
-                           <a data-title-tabel class="title" href="#">잊지말고 들러야할 다낭 클럽</a>
-                        </li>
-                     </ol>
-                  </li>
-               </ol>
+               <ol id="table-list" class="list"></ol>
             </div>
          </section>
 
-         <section class="content_page">
+         <section class="content-page">
             <div class="container">
-               <ul>
-                  <li>
-                     <div class="title">
-                        <div class="box-icon">
-                           <ion-icon name="checkmark-outline"></ion-icon>
-                        </div>
-                        <h2 data-title-content>다낭밤문화가 더욱 특별해지는 이유</h2>
-                     </div>
-                     <p class="text">
-                        다낭이라는 곳을 처음 접근하시는 분들은 대부분 골프여행 혹은 패키지 여행을 통해서 처음 접하게 되는 곳이기도 합니다. 하지만 기본적으로 유흥을 원하여
-                        접근을 하는 것이 아니라서 시간이 많이 나지 않는 경우가 많이 있고, 짧은 시간이라도 제대로 즐기기 위해서 다낭마사지 업체를 잘 골라서 이용하시는 것이 가장 다낭마사지를 잘
-                        이용할 수 있는 현명한 방법이라고 생각을 합니다. 그래서 오늘은 무엇보다 여러분들이 다낭마사지를 왜 이용을 해야하고 어떤 방식으로 이용을 하시는지 좋은것에 대해서 한번 로컬
-                        업체들을 기준으로 하여 알아보도록 하겠습니다.
-                     </p>
-                     <p class="text">
-                        다낭이라는 곳을 처음 접근하시는 분들은 대부분 골프여행 혹은 패키지 여행을 통해서 처음 접하게 되는 곳이기도 합니다. 하지만 기본적으로 유흥을 원하여
-                     </p>
-                     <div class="box-image">
-                        <img src="./assets/images/banner_2.jpg" alt="Image for content of table">
-                     </div>
-                     <ul>
-                        <li>
-                           <div class="title">
-                              <div class="box-icon">
-                                 <ion-icon name="checkmark-outline"></ion-icon>
-                              </div>
-                              <h2 data-title-content>아름다운 밤문화와 다낭 가라오케</h2>
-                           </div>
-                           <p class="text">
-                              다낭이라는 곳을 처음 접근하시는 분들은 대부분 골프여행 혹은 패키지 여행을 통해서 처음 접하게 되는 곳이기도 합니다. 하지만 기본적으로 유흥을 원하여
-                              접근을 하는 것이 아니라서 시간이 많이 나지 않는 경우가 많이 있고, 짧은 시간이라도 제대로 즐기기 위해서 다낭마사지 업체를 잘 골라서 이용하시는 것이 가장
-                              다낭마사지를 잘
-                              이용할 수 있는 현명한 방법이라고 생각을 합니다. 그래서 오늘은 무엇보다 여러분들이 다낭마사지를 왜 이용을 해야하고 어떤 방식으로 이용을 하시는지 좋은것에 대해서
-                              한번 로컬
-                              업체들을 기준으로 하여 알아보도록 하겠습니다.
-                           </p>
-                           <div class="box-image">
-                              <img src="./assets/images/h2.jpg" alt="Image for content of table">
-                           </div>
-                        </li>
-                        <li>
-                           <div class="title">
-                              <div class="box-icon">
-                                 <ion-icon name="checkmark-outline"></ion-icon>
-                              </div>
-                              <h2 data-title-content>매일같이 즐기고 싶어지는 다낭 마사지</h2>
-                           </div>
-                           <p class="text">
-                              다낭이라는 곳을 처음 접근하시는 분들은 대부분 골프여행 혹은 패키지 여행을 통해서 처음 접하게 되는 곳이기도 합니다. 하지만 기본적으로 유흥을 원하여
-                              접근을 하는 것이 아니라서 시간이 많이 나지 않는 경우가 많이 있고, 짧은 시간이라도 제대로 즐기기 위해서 다낭마사지 업체를 잘 골라서 이용하시는 것이 가장
-                              다낭마사지를 잘
-                              이용할 수 있는 현명한 방법이라고 생각을 합니다. 그래서 오늘은 무엇보다 여러분들이 다낭마사지를 왜 이용을 해야하고 어떤 방식으로 이용을 하시는지 좋은것에 대해서
-                              한번 로컬
-                              업체들을 기준으로 하여 알아보도록 하겠습니다.
-                           </p>
-                           <ul class="list-address">
-                              <li>영업시간 : 10:00 ~ 22:00</li>
-                              <li>주소 : 308 Nguyễn Hữu Thọ, Quận Cẩm Lệ, Đà Nẵng</li>
-                              <li>가격 : 80,000 ~ 200,000VND/시간단위</li>
-                           </ul>
-                           <div class="box-image">
-                              <img src="./assets/images/h2.jpg" alt="Image for content of table">
-                           </div>
-                        </li>
-                     </ul>
-                  </li>
-               </ul>
+               <ul id="content-list"></ul>
             </div>
          </section>
 
@@ -192,9 +113,7 @@
                Copyright (c) <strong>2024 NGO VIET THANH.</strong> all rights reserved.
             </p>
          </div>
-         <div class="footer-map">
-
-         </div>
+         <div class="footer-map"></div>
       </div>
    </footer>
 
@@ -202,12 +121,19 @@
       <ion-icon name="chevron-up-outline"></ion-icon>
    </button>
 
+   <button class="talk">
+      <span>다낭밤문화 카카오톡 문의</span>
+      <div class="box-talk">
+         <img src="./assets/images/popup_kakao.jpg" alt="">
+      </div>
+   </button>
+
+
    <!-- custome js link -->
    <script src="./assets/js/script.js"></script>
    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
    </script>
    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
 
 </html>
